@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="css/stylei.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="img/SoloLogoSIPSG.png" type="image/png">
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+          <div class="text logo">
+            <span class="name">SIPSG</span>
+            <span class="profe">Inventario</span>
+          </div>
+          <i class="bx bx-menu toggle"></i>
+        </header>
+    
+        <div class="profile" >
+          <div class="photo"><img src="img/SoloLogoSIPSG.png" alt="Foto de Perfil"></div>
+          
+        </div>
+    
+        <div class="menu-bar">
+          <div class="menu">
+            <li class="search-box">
+              <i class="bx bx-search icon"></i>
+              <input type="text" placeholder="    Buscar....">
+            </li>
+    
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="index.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Home</span>
+                </a>
+    
+              </li>
+    
+              <li class="nav-link">
+                <a href="#">
+                  <i class="bx bx-data icon" ></i>
+                  <span class="text nav-text">Inventario</span>
+                </a>
+    
+              </li>
+    
+              <li class="nav-link">
+                <a href="reportes.html">
+                  <i class="bx bx-bell icon"></i>
+                  <span class="text nav-text">Reportes</span>
+                </a>
+    
+              </li>
+    
+              <li class="nav-link">
+                <a href="entradaproductos.html">
+                  <i class='bx bxs-box icon'></i>
+                  <span class="text nav-text">Ingresar productos</span>
+                </a>
+    
+              </li>
+    
+              <li class="nav-link">
+                <a href="salidaproductos.html">
+                  <i class='bx bx-box icon'></i>
+                  <span class="text nav-text">Salida de productos</span>
+                </a>
+    
+              </li>
+    
+            
+    
+            </ul>
+          </div>
+    
+          <div class="bottom-content">
+            <li class="">
+              <a href="../login.html">
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Salir</span>
+              </a>
+            </li>
+    
+            <li class="mode">
+              <div class="sun-moon">
+                <i class="bx bx-moon icon moon" class="moon"></i>
+                <i class="bx bx-sun icon sun"></i>
+              </div>
+              <span class="mode-text text">Modo oscuro</span>
+              <div class="toggle-switch">
+                <span class="switch"></span>
+              </div>
+            </li>
+    
+          </div>
+    
+        </div>
+      </nav>
+      <main class="table">
+        <section class="table__header">
+          <h1>Inventario</h1>
+          <div class="input-group">
+            <i class='bx bx-search-alt-2' ></i>
+            <input type="search" placeholder="Search Data...">
+                
+          </div>
+            
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Producto</th>
+                        <th>cantidad</th>
+                        <th>Estado</th>
+                        <th>Ver</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 12343 </td>
+                        <td>  Zinzu Chan Lee dsas asdasdasdasd asd </td>
+                        <td> inventario </td>
+                        
+                        <td>
+                            <p class="status activo">Activo</p>
+                        </td>
+                        <td> <a class="btn-ver" href="verUsuario.html" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 223434 </td>
+                        <td> Jeet Saru </td>
+                        <td> produccion </td>
+                        
+                        <td>
+                            <p class="status inactivo">Inactivo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 323432</td>
+                        <td> Sonal Gharti </td>
+                        <td> ventas </td>
+                        
+                        <td>
+                            <p class="status inactivo">Inactivo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 42344</td>
+                        <td> Alson GC </td>
+                        <td> produccion </td>
+                        
+                        <td>
+                            <p class="status inactivo">Inactivo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 523434</td>
+                        <td> Sarita Limbu </td>
+                        <td> inventario </td>
+                        
+                        <td>
+                            <p class="status activo">Activo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 2312312</td>
+                        <td> Alex Gonley </td>
+                        <td> inventario </td>
+                        
+                        <td>
+                            <p class="status inactivo">Inactivo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 5676776</td>
+                        <td> Jeet Saru </td>
+                        <td> produccion </td>
+                        
+                        <td>
+                            <p class="status activo">Activo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 56464665</td>
+                        <td> Aayat Ali Khan </td>
+                        <td> produccion </td>
+                        
+                        <td>
+                            <p class="status activo">Activo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                    <tr>
+                        <td> 435345</td>
+                        <td> Alson GC </td>
+                        <td> produccion </td>
+                        
+                        <td>
+                            <p class="status inactivo">Inactivo</p>
+                        </td>
+                        <td><a class="btn-ver" href="#" role="button"><img src="img/show-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-edit" href="editarUsuario.html" role="button"><img src="img/edit-alt-regular-36.png" alt=""></a></td>
+                        <td><a class="btn-delete" href="#" role="button"><img src="img/trash-regular-36.png" alt=""></a></td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          
+        </section>
+      </main>
+      <div class="retroceso">
+        <a href="index.html"><i class='bx bx-chevron-left-circle'></i></a>
+      </div>
+      <script src="javaScript/main.js"></script>
+    
+</body>
+</html>
