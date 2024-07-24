@@ -37,6 +37,3 @@ build/
 
 # eslint cache
 .eslintcache
-
-# Tailwind CSS generated files
-tailwind.css
