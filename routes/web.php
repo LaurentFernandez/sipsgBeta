@@ -30,6 +30,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/terms-of-service', function () {
+    return view('auth.terms-of-service');
+})->name('terms-of-service');
+
 
 Route::get('php/', function () {
     return phpinfo();

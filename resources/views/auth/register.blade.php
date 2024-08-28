@@ -47,16 +47,16 @@
                     {{ $message }}
                 </div>
             @enderror
-        </div>
-        <div class="mb-3">
+            <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <div class="input-group input-group-flat">
                 <input type="password" name="password" id="password"
-                       class="form-control @error('password') is-invalid @enderror"
-                       placeholder="Password"
-                       autocomplete="off"
-                >
-
+                    class="form-control @error('password') is-invalid @enderror"
+                    placeholder="Password"
+                    autocomplete="off"
+                    required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}" 
+                    title="La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula, un número y un símbolo.">
                 @error('password')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -68,11 +68,12 @@
             <label for="password_confirmation" class="form-label">Confirm Password</label>
             <div class="input-group input-group-flat">
                 <input type="password" name="password_confirmation" id="password_confirmation"
-                       class="form-control @error('password') is-invalid @enderror"
-                       placeholder="Password Confirmation"
-                       autocomplete="off"
-                >
-
+                    class="form-control @error('password') is-invalid @enderror"
+                    placeholder="Password Confirmation"
+                    autocomplete="off"
+                    required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}" 
+                    title="La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula, un número y un símbolo.">
                 @error('password')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -86,7 +87,7 @@
                        class="form-check-input @error('terms-of-service') is-invalid @enderror"
                 >
                 <span class="form-check-label">
-                    Agree the <a href="./terms-of-service.html" tabindex="-1">
+                    Agree the <a href="{{ route('terms-of-service') }}" tabindex="-1">
                         terms and policy</a>.
                 </span>
             </label>
