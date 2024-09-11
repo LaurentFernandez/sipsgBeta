@@ -4,7 +4,7 @@
 <div class="text-center">
     <div class="my-5">
         <p class="fs-h3 text-secondary">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+            {{ __('¡Gracias por registrarte! Antes de comenzar, ¿podría verificar su dirección de correo electrónico haciendo clic en el enlace que le acabamos de enviar por correo electrónico? Si no recibió el correo electrónico, con gusto le enviaremos otro.') }}
         </p>
     </div>
 </div>
@@ -14,7 +14,7 @@
     @csrf
 
     <button type="submit" class="btn btn-primary w-100">
-        {{ __('Resend Verification Email') }}
+        {{ __('Reenviar Correo de Verificacion') }}
     </button>
 
     <div class="mt-4">
@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <div class="text-secondary">
-                            {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+                            {{ __('Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.') }}
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
 
     <div class="form-footer">
         <button type="submit" class="btn btn-primary w-100">
-            {{ __('Log Out') }}
+            {{ __('Salir') }}
         </button>
     </div>
 </form>

@@ -4,9 +4,9 @@
     <div class="page-body">
         @if(!$quotations)
             <x-empty
-                title="No quotations found"
-                message="Try adjusting your search or filter to find what you're looking for."
-                button_label="{{ __('Add your first Quotation') }}"
+                title="No se encontraron cotizaciones"
+                message="Intenta ajustar tu búsqueda o filtro para encontrar lo que estás buscando."
+                button_label="{{ __('Agrega tu primera Cotización') }}"
                 button_route="{{ route('quotations.create') }}"
             />
         @else

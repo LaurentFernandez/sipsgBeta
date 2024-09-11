@@ -4,9 +4,9 @@
 <div class="page-body">
     @if(count($purchases) == 0)
         <x-empty
-            title="No approved purchases found"
-            message="Try adjusting your search or filter to find what you're looking for."
-            button_label="{{ __('Add your first Purchase') }}"
+            title="No se encontraron compras aprobadas"
+            message="Intenta ajustar tu búsqueda o filtro para encontrar lo que buscas."
+            button_label="{{ __('Añadir tu primera compra') }}"
             button_route="{{ route('purchases.create') }}"
         />
     @else
@@ -15,8 +15,8 @@
                 <div class="card-header">
                     <div>
                         <h3 class="card-title">
-                            {{ __('Purchases: ') }}
-                            <span class="btn btn-success btn-sm text-uppercase">{{ __('Approved') }}</span>
+                            {{ __('Compras: ') }}
+                            <span class="btn btn-success btn-sm text-uppercase">{{ __('Aprobadas') }}</span>
                         </h3>
                     </div>
 
@@ -31,11 +31,11 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="text-center">No.</th>
-                                <th scope="col" class="text-center">Purchase</th>
-                                <th scope="col" class="text-center">Supplier</th>
-                                <th scope="col" class="text-center">Date</th>
+                                <th scope="col" class="text-center">Compra</th>
+                                <th scope="col" class="text-center">Proveedor</th>
+                                <th scope="col" class="text-center">Fecha</th>
                                 <th scope="col" class="text-center">Total</th>
-                                <th scope="col" class="text-center">Action</th>
+                                <th scope="col" class="text-center">Acción</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,7 +54,7 @@
                                     {{ $purchase->created_at->format('d-m-Y') }}
                                 </td>
                                 <td class="text-center">
-                                    {{ Number::currency($purchase->total_amount, 'EUR') }}
+                                    {{ Number::currency($purchase->total_amount, 'USD') }}
                                 </td>
                                 <td class="text-center">
                                     <a href="{{ route('purchases.show', $purchase) }}" class="btn btn-icon btn-outline-info">

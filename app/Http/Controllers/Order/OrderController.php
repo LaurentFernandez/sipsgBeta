@@ -173,4 +173,6 @@ class OrderController extends Controller
             ])
             ->with('success', 'Order has been canceled!');
     }
+
+    
 }

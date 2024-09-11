@@ -50,7 +50,7 @@
             </div>
 
             <div class="col-lg-4">
-                <div class="card mb-4">
+                <!-- <div class="card mb-4">
                     <div class="card-header">
                         Two-Factor Authentication
                     </div>
@@ -72,7 +72,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="card mb-4">
                     <div class="card-header">

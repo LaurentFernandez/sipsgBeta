@@ -2,7 +2,7 @@
     <div class="card-header">
         <div>
             <h3 class="card-title">
-                {{ __('Purchases') }}
+                {{ __('Compras') }}
             </h3>
         </div>
 
@@ -14,21 +14,21 @@
     <div class="card-body border-bottom py-3">
         <div class="d-flex">
             <div class="text-secondary">
-                Show
+                Mostrar
                 <div class="mx-2 d-inline-block">
-                    <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
+                    <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="resultados por página">
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
                         <option value="25">25</option>
                     </select>
                 </div>
-                entries
+                entradas
             </div>
             <div class="ms-auto text-secondary">
-                Search:
+                Buscar:
                 <div class="ms-2 d-inline-block">
-                    <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
+                    <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Buscar compra">
                 </div>
             </div>
         </div>
@@ -45,19 +45,19 @@
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('purchase_no')" href="#" role="button">
-                            {{ __('Purchase No.') }}
+                            {{ __('Núm. de Compra') }}
                             @include('inclues._sort-icon', ['field' => 'purchase_no'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('supplier_id')" href="#" role="button">
-                            {{ __('Supplier') }}
+                            {{ __('Proveedor') }}
                             @include('inclues._sort-icon', ['field' => 'supplier_id'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('date')" href="#" role="button">
-                            {{ __('Date') }}
+                            {{ __('Fecha') }}
                             @include('inclues._sort-icon', ['field' => 'date'])
                         </a>
                     </th>
@@ -69,12 +69,12 @@
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('status')" href="#" role="button">
-                            {{ __('Status') }}
+                            {{ __('Estado') }}
                             @include('inclues._sort-icon', ['field' => 'status'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        {{ __('Action') }}
+                        {{ __('Acción') }}
                     </th>
                 </tr>
             </thead>
@@ -94,13 +94,13 @@
                         {{ $purchase->date->format('d-m-Y') }}
                     </td>
                     <td class="align-middle text-center">
-                        {{ Number::currency($purchase->total_amount, 'EUR') }}
+                        {{ Number::currency($purchase->total_amount, 'USD') }}
                     </td>
 
                     @if ($purchase->status === \App\Enums\PurchaseStatus::APPROVED)
                         <td class="align-middle text-center">
                             <span class="badge bg-green text-white text-uppercase">
-                                {{ __('APPROVED') }}
+                                {{ __('APROBADO') }}
                             </span>
                         </td>
                         <td class="align-middle text-center">
@@ -109,21 +109,21 @@
                     @else
                         <td class="align-middle text-center">
                             <span class="badge bg-orange text-white text-uppercase">
-                                {{ __('PENDING') }}
+                                {{ __('PENDIENTE') }}
                             </span>
                         </td>
                         <td class="align-middle text-center" style="width: 10%">
                             <x-button.show class="btn-icon" route="{{ route('purchases.edit', $purchase->uuid) }}"/>
-                            {{-- <x-button.complete class="btn-icon"  onclick="return confirm('Are you sure to approve purchase no. {{ $purchase->purchase_no }}!') route="{{ route('purchases.update', $purchase->uuid) }}"/> --}}
-                            <x-button.complete class="btn-icon" route="{{ route('purchases.update', $purchase->uuid) }}" onclick="return confirm('Are you sure to approve purchase no. {{ $purchase->purchase_no }}?')"/>
-                            <x-button.delete class="btn-icon" onclick="return confirm('Are you sure!')" route="{{ route('purchases.delete', $purchase->uuid) }}"/>
+                            {{-- <x-button.complete class="btn-icon" onclick="return confirm('Are you sure to approve purchase no. {{ $purchase->purchase_no }}!') route="{{ route('purchases.update', $purchase->uuid) }}"/> --}}
+                            <x-button.complete class="btn-icon" route="{{ route('purchases.update', $purchase->uuid) }}" onclick="return confirm('¿Está seguro de aprobar la compra núm. {{ $purchase->purchase_no }}?')"/>
+                            <x-button.delete class="btn-icon" onclick="return confirm('¿Está seguro!')" route="{{ route('purchases.delete', $purchase->uuid) }}"/>
                         </td>
                     @endif
                 </tr>
                 @empty
                 <tr>
                     <td class="align-middle text-center" colspan="7">
-                        No results found
+                        No se encontraron resultados
                     </td>
                 </tr>
             @endforelse
@@ -133,8 +133,8 @@
 
     <div class="card-footer d-flex align-items-center">
         <p class="m-0 text-secondary">
-            Showing <span>{{ $purchases->firstItem() }}</span>
-            to <span>{{ $purchases->lastItem() }}</span> of <span>{{ $purchases->total() }}</span> entries
+            Mostrando <span>{{ $purchases->firstItem() }}</span>
+            a <span>{{ $purchases->lastItem() }}</span> de <span>{{ $purchases->total() }}</span> entradas
         </p>
 
         <ul class="pagination m-0 ms-auto">

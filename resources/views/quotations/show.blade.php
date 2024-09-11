@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <div>
                             <h3 class="card-title">
-                                {{ __('Quotation Details') }}
+                                {{ __('Detalles de la Cotización') }}
                             </h3>
                         </div>
 
@@ -20,7 +20,7 @@
                         <div class="row row-cards mb-3">
                             <div class="col-3">
                                 <label for="date" class="small mb-1">
-                                    {{ __('Date') }}
+                                    {{ __('Fecha') }}
                                 </label>
 
                                 <input type="text" id="date" class="form-control"
@@ -29,7 +29,7 @@
 
                             <div class="col-3">
                                 <label for="purchase_no" class="small mb-1">
-                                    {{ __('Reference ID') }}
+                                    {{ __('ID de Referencia') }}
                                 </label>
                                 <input type="text" id="purchase_no" class="form-control"
                                     value="{{ $quotation->reference }}" disabled>
@@ -37,7 +37,7 @@
 
                             <div class="col-3">
                                 <label for="supplier" class="small mb-1">
-                                    {{ __('Customer Name') }}
+                                    {{ __('Nombre del Cliente') }}
                                 </label>
                                 <input type="text" id="supplier" class="form-control"
                                     value="{{ $quotation->customer_name }}" disabled>
@@ -45,21 +45,19 @@
 
                             <div class="col-3">
                                 <label for="create_by" class="small mb-1">
-                                    {{ __('Tax %') }}
+                                    {{ __('% de Impuesto') }}
                                 </label>
                                 <input type="text" id="create_by" class="form-control"
                                     value="{{ $quotation->tax_percentage ?? null }}" disabled>
                             </div>
 
-
                             <div class="col-12">
                                 <label for="create_by" class="small mb-1">
-                                    {{ __('Note') }}
+                                    {{ __('Nota') }}
                                 </label>
                                 <textarea name="note" id="note" cols="30" rows="2" class="form-control" disabled>{{ $quotation->note }}</textarea>
                             </div>
                         </div>
-
 
                         <div class="col-lg-12">
                             <div class="table-responsive">
@@ -67,13 +65,13 @@
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col" class="align-middle text-center">No.</th>
-                                            <th scope="col" class="align-middle text-center">Photo</th>
-                                            <th scope="col" class="align-middle text-center">Product Name</th>
-                                            <th scope="col" class="align-middle text-center">Product Code</th>
-                                            <th scope="col" class="align-middle text-center">Current Stock</th>
-                                            <th scope="col" class="align-middle text-center">Quantity</th>
-                                            <th scope="col" class="align-middle text-center">Price</th>
-                                            <th scope="col" class="align-middle text-center">Sub Total</th>
+                                            <th scope="col" class="align-middle text-center">Foto</th>
+                                            <th scope="col" class="align-middle text-center">Nombre del Producto</th>
+                                            <th scope="col" class="align-middle text-center">Código del Producto</th>
+                                            <th scope="col" class="align-middle text-center">Stock Actual</th>
+                                            <th scope="col" class="align-middle text-center">Cantidad</th>
+                                            <th scope="col" class="align-middle text-center">Precio</th>
+                                            <th scope="col" class="align-middle text-center">Subtotal</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -112,10 +110,10 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                        {{-- created by --}}
+                                        {{-- creado por --}}
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Created By
+                                                Creado Por
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ $quotation->user->name }}
@@ -132,7 +130,7 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Tax
+                                                Impuesto
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ number_format($quotation->tax_amount, 2) }}
@@ -141,7 +139,7 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Shipping
+                                                Envío
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ number_format($quotation->shipping_amount, 2) }}
@@ -150,7 +148,7 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Discount
+                                                Descuento
                                             </td>
                                             <td class="align-middle text-center">
                                                 {{ number_format($quotation->discount_amount, 2) }}
@@ -159,20 +157,20 @@
 
                                         <tr>
                                             <td class="align-middle text-end" colspan="7">
-                                                Status
+                                                Estado
                                             </td>
                                             <td class="align-middle text-center">
                                                 @if ($quotation->status->value == 1)
                                                     <span class="badge bg-success-lt">
-                                                        Completed
+                                                        Completada
                                                     </span>
                                                 @elseif ($quotation->status->value == 0)
                                                     <span class="badge bg-warning-lt">
-                                                        Pending
+                                                        Pendiente
                                                     </span>
                                                 @else
                                                     <span class="badge bg-danger-lt">
-                                                        Cancel
+                                                        Cancelada
                                                     </span>
                                                 @endif
                                             </td>
@@ -182,14 +180,14 @@
                             </div>
                         </div>
 
-                        {{-- complete quotation button --}}
+                        {{-- botón para completar la cotización --}}
                         @if ($quotation->status->value == 0)
                             <div class="col-4 float-right my-4">
                                 <form action="{{ route('quotations.update', $quotation->uuid) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-success">
                                         <i class="bi bi-check-circle"></i>
-                                        Complete Quotation
+                                        Completar Cotización
                                     </button>
                                 </form>
                             </div>

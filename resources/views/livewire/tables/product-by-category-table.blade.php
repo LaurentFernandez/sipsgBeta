@@ -3,21 +3,26 @@
         <div class="card-header">
             <div>
                 <h3 class="card-title">
-                    Category: {{ $category->name }}
+                    Categoría: {{ $category->name }}
                 </h3>
             </div>
 
             <div class="card-actions btn-actions">
                 <div class="dropdown">
                     <a href="#" class="btn-action dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/dots-vertical -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+                        <!-- Descargar ícono SVG desde http://tabler-icons.io/i/dots-vertical -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                            <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                            <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                        </svg>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-end" style="">
+                    <div class="dropdown-menu dropdown-menu-end">
                         <a href="{{ route('products.create', ['category' => $category]) }}" class="dropdown-item">
                             <x-icon.plus/>
-                            {{ __('Add Product') }}
+                            {{ __('Agregar Producto') }}
                         </a>
                     </div>
                 </div>
@@ -29,21 +34,21 @@
         <div class="card-body border-bottom py-3">
             <div class="d-flex">
                 <div class="text-secondary">
-                    Show
+                    Mostrar
                     <div class="mx-2 d-inline-block">
-                        <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="result per page">
+                        <select wire:model.live="perPage" class="form-select form-select-sm" aria-label="resultados por página">
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="15">15</option>
                             <option value="25">25</option>
                         </select>
                     </div>
-                    entries
+                    entradas
                 </div>
                 <div class="ms-auto text-secondary">
-                    Search:
+                    Buscar:
                     <div class="ms-2 d-inline-block">
-                        <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Search invoice">
+                        <input type="text" wire:model.live="search" class="form-control form-control-sm" aria-label="Buscar producto">
                     </div>
                 </div>
             </div>
@@ -60,24 +65,24 @@
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('name')" href="#" role="button">
-                            {{ __('Product Name') }}
+                            {{ __('Nombre del Producto') }}
                             @include('inclues._sort-icon', ['field' => 'name'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center d-none d-sm-table-cell">
                         <a wire:click.prevent="sortBy('code')" href="#" role="button">
-                            {{ __('Product Code') }}
+                            {{ __('Código del Producto') }}
                             @include('inclues._sort-icon', ['field' => 'code'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center d-none d-sm-table-cell">
                         <a wire:click.prevent="sortBy('quantity')" href="#" role="button">
-                            {{ __('Product Quantity') }}
+                            {{ __('Cantidad del Producto') }}
                             @include('inclues._sort-icon', ['field' => 'quantity'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        {{ __('Action') }}
+                        {{ __('Acción') }}
                     </th>
                 </tr>
                 </thead>
@@ -104,17 +109,18 @@
                     </tr>
                 @empty
                     <tr>
-                        <td class="align-middle text-center" colspan="8">
-                            No results found
+                        <td class="align-middle text-center" colspan="5">
+                            No se encontraron resultados
                         </td>
                     </tr>
                 @endforelse
                 </tbody>
             </table>
         </div>
+
         <div class="card-footer d-flex align-items-center">
             <p class="m-0 text-secondary">
-                Showing <span>{{ $products->firstItem() }}</span> to <span>{{ $products->lastItem() }}</span> of <span>{{ $products->total() }}</span> entries
+                Mostrando <span>{{ $products->firstItem() }}</span> a <span>{{ $products->lastItem() }}</span> de <span>{{ $products->total() }}</span> entradas
             </p>
 
             <ul class="pagination m-0 ms-auto">

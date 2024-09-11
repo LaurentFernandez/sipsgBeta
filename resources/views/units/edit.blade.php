@@ -7,8 +7,7 @@
             <div class="card-header">
                 <div>
                     <h3 class="card-title">
-                        {{ __('Edit Unit') }}
-
+                        {{ __('Editar Unidad') }}
                     </h3>
                 </div>
 
@@ -23,7 +22,7 @@
 
                 <div class="card-body">
                     <x-input
-                        label="{{ __('Unit Name') }}"
+                        label="{{ __('Nombre de la Unidad') }}"
                         id="name"
                         name="name"
                         :value="old('name', $unit->name)"
@@ -31,7 +30,7 @@
                     />
 
                     <x-input
-                        label="{{ __('Short Code') }}"
+                        label="{{ __('Código Corto') }}"
                         id="short_code"
                         name="short_code"
                         :value="old('short_code', $unit->short_code)"
@@ -40,7 +39,7 @@
                 </div>
                 <div class="card-footer text-end">
                     <x-button type="submit">
-                        {{ __('Update') }}
+                        {{ __('Actualizar') }}
                     </x-button>
                 </div>
             </form>
@@ -51,7 +50,7 @@
 
 @pushonce('page-scripts')
 <script>
-    // Slug Generator
+    // Generador de Slug
     const title = document.querySelector("#name");
     const slug = document.querySelector("#slug");
     title.addEventListener("keyup", function() {

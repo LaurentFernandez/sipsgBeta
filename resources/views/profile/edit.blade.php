@@ -8,7 +8,7 @@
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Account Settings - Profile
+                            Configuración de la Cuenta - Perfil
                         </h1>
                     </div>
                 </div>
@@ -28,17 +28,17 @@
             @method('patch')
             <div class="row">
                 <div class="col-xl-4">
-                    <!-- Profile picture card -->
+                    <!-- Tarjeta de imagen de perfil -->
                     <div class="card mb-4 mb-xl-0">
-                        <div class="card-header">Profile Picture</div>
+                        <div class="card-header">Imagen de Perfil</div>
                         <div class="card-body text-center">
-                            <!-- Profile picture image -->
+                            <!-- Imagen de perfil -->
                             <img class="img-account-profile rounded-circle mb-2"
                                 src="{{ $user->photo ? asset('storage/profile//' . $user->photo) : asset('assets/img/illustrations/profiles/profile-1.png') }}"
                                 alt="" id="image-preview" />
-                            <!-- Profile picture help block -->
-                            <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 1 MB</div>
-                            <!-- Profile picture input -->
+                            <!-- Bloque de ayuda de la imagen de perfil -->
+                            <div class="small font-italic text-muted mb-2">JPG o PNG no mayor a 1 MB</div>
+                            <!-- Input para la imagen de perfil -->
                             <input class="form-control form-control-solid mb-2 @error('photo') is-invalid @enderror"
                                 type="file" id="image" name="photo" accept="image/*" onchange="previewImage();">
                             @error('photo')
@@ -51,15 +51,15 @@
                 </div>
 
                 <div class="col-xl-8">
-                    <!-- Account details card -->
+                    <!-- Tarjeta de detalles de la cuenta -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            Account Details
+                            Detalles de la Cuenta
                         </div>
                         <div class="card-body">
-                            <!-- Form Group (username) -->
+                            <!-- Grupo de formulario (nombre de usuario) -->
                             <div class="mb-3">
-                                <label class="small mb-1" for="username">Username</label>
+                                <label class="small mb-1" for="username">Nombre de Usuario</label>
                                 <input class="form-control form-control-solid @error('username') is-invalid @enderror"
                                     id="username" name="username" type="text" placeholder=""
                                     value="{{ old('username', $user->username) }}" autocomplete="off" />
@@ -69,9 +69,9 @@
                                     </div>
                                 @enderror
                             </div>
-                            <!-- Form Group (name) -->
+                            <!-- Grupo de formulario (nombre completo) -->
                             <div class="mb-3">
-                                <label class="small mb-1" for="name">Full name</label>
+                                <label class="small mb-1" for="name">Nombre Completo</label>
                                 <input class="form-control form-control-solid @error('name') is-invalid @enderror"
                                     id="name" name="name" type="text" placeholder=""
                                     value="{{ old('name', $user->name) }}" autocomplete="off" />
@@ -83,10 +83,10 @@
                             </div>
                             <div class="mb-3">
                                 <label class="small mb-1" for="email">
-                                    Email address
+                                    Dirección de Correo Electrónico
                                 </label>
 
-                                <input class="form-control form-control-solid @error('photo') is-invalid @enderror"
+                                <input class="form-control form-control-solid @error('email') is-invalid @enderror"
                                     id="email" name="email" type="text" placeholder=""
                                     value="{{ old('email', $user->email) }}" autocomplete="off" />
                                 @error('email')
@@ -97,7 +97,7 @@
                             </div>
 
                             <button class="btn btn-primary" type="submit">
-                                {{ __('Update') }}
+                                {{ __('Actualizar') }}
                             </button>
                         </div>
                     </div>

@@ -85,43 +85,40 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
 
-                                {{--                                    <div class="card"> --}}
-                                {{--                                        <div class="card-header"> --}}
-                                {{--                                            <h3 class="card-title">Last updates</h3> --}}
-                                {{--                                        </div> --}}
-                                {{--                                        <div class="list-group list-group-flush list-group-hoverable"> --}}
+                            <div class="card">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Últimas actualizaciones</h3>
+                                                        </div>
+                                                        <div class="list-group list-group-flush list-group-hoverable">
+                                                            @foreach (auth()->user()->unreadNotifications as $notification)
+                                                                <a href="#" class="text-success">
+                                                                    <li class="p-1 text-success"> {{$notification->data['data']}}</li>
+                                                                </a>
+                                                                <div class="list-group-item">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto"><span class="status-dot status-dot-animated bg-red d-block"></span></div>
+                                                                        <div class="col text-truncate">
+                                                                            <a href="#" class="text-body d-block">Ejemplo 1</a>
+                                                                            <div class="d-block text-muted text-truncate mt-n1">
+                                                                                Cambiar etiquetas HTML obsoletas a clases de decoración de texto (#29604)
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <a href="#" class="list-group-item-actions">
+                                                                                <!-- Descargar ícono SVG de http://tabler-icons.io/i/star -->
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                                                    <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                                                                                </svg>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
 
-                                {{--                                            @foreach (auth()->user()->unreadNotifications as $notification) --}}
-                                {{--                                                <a href="#" class="text-success"> --}}
-                                {{--                                                    <li class="p-1 text-success"> {{$notification->data['data']}}</li> --}}
-                                {{--                                                </a> --}}
-                                {{--                                                <div class="list-group-item"> --}}
-                                {{--                                                    <div class="row align-items-center"> --}}
-                                {{--                                                        <div class="col-auto"><span class="status-dot status-dot-animated bg-red d-block"></span></div> --}}
-                                {{--                                                        <div class="col text-truncate"> --}}
-                                {{--                                                            <a href="#" class="text-body d-block">Example 1</a> --}}
-                                {{--                                                            <div class="d-block text-muted text-truncate mt-n1"> --}}
-                                {{--                                                                Change deprecated html tags to text decoration classes (#29604) --}}
-                                {{--                                                            </div> --}}
-                                {{--                                                        </div> --}}
-                                {{--                                                        <div class="col-auto"> --}}
-                                {{--                                                            <a href="#" class="list-group-item-actions"> --}}
-                                {{--                                                                <!-- Download SVG icon from http://tabler-icons.io/i/star --> --}}
-                                {{--                                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg> --}}
-                                {{--                                                            </a> --}}
-                                {{--                                                        </div> --}}
-                                {{--                                                    </div> --}}
-                                {{--                                                </div> --}}
-                                {{--                                            @endforeach --}}
-                                {{--                                        </div> --}}
-                                {{--                                    </div> --}}
-                                <span class="dropdown-header">Dropdown header</span>
-                                <a class="dropdown-item" href="#">
-                                    Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    Another action
-                                </a>
+                                
                             </div>
                         </div>
 
@@ -166,7 +163,7 @@
                                     </path>
                                     <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
                                 </svg>
-                                Account
+                                Configuracion
                             </a>
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
@@ -181,7 +178,7 @@
                                         <path d="M9 12h12l-3 -3" />
                                         <path d="M18 15l3 -3" />
                                     </svg>
-                                    Logout
+                                    Salir
                                 </button>
                             </form>
                         </div>
@@ -237,7 +234,7 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Dashboard') }}
+                                        {{ __('Principal') }}
                                     </span>
                                 </a>
                             </li>
@@ -265,7 +262,7 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Products') }}
+                                        {{ __('Productos') }}
                                     </span>
                                 </a>
                             </li>
@@ -290,23 +287,23 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Orders') }}
+                                        {{ __('Pedidos') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             <a class="dropdown-item" href="{{ route('orders.index') }}">
-                                                {{ __('All') }}
+                                                {{ __('Todo') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('orders.complete') }}">
-                                                {{ __('Completed') }}
+                                                {{ __('Comple') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('orders.pending') }}">
-                                                {{ __('Pending') }}
+                                                {{ __('Pendiente') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('due.index') }}">
-                                                {{ __('Due') }}
+                                                {{ __('No resuelto') }}
                                             </a>
                                         </div>
                                     </div>
@@ -333,22 +330,22 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Purchases') }}
+                                        {{ __('Compras') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             <a class="dropdown-item" href="{{ route('purchases.index') }}">
-                                                {{ __('All') }}
+                                                {{ __('Todo') }}
                                             </a>
                                             <a class="dropdown-item"
                                                 href="{{ route('purchases.approvedPurchases') }}">
-                                                {{ __('Approval') }}
+                                                {{ __('Aprovado') }}
                                             </a>
                                             <a class="dropdown-item"
                                                 href="{{ route('purchases.purchaseReport') }}">
-                                                {{ __('Daily Purchase Report') }}
+                                                {{ __('Informe diario de compras') }}
                                             </a>
                                         </div>
                                     </div>
@@ -372,7 +369,7 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Quotations') }}
+                                        {{ __('Cotizaciones') }}
                                     </span>
                                 </a>
                             </li>
@@ -396,17 +393,17 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Pages') }}
+                                        {{ __('Clientes y Proveedores') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             <a class="dropdown-item" href="{{ route('suppliers.index') }}">
-                                                {{ __('Suppliers') }}
+                                                {{ __('Proveedores') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('customers.index') }}">
-                                                {{ __('Customers') }}
+                                                {{ __('Clientes') }}
                                             </a>
                                         </div>
                                     </div>
@@ -431,20 +428,20 @@
                                         </svg>
                                     </span>
                                     <span class="nav-link-title">
-                                        {{ __('Settings') }}
+                                        {{ __('Ajustes') }}
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             {{-- <a class="dropdown-item" href="{{ route('users.index') }}">
-                                                    {{ __('Users') }}
+                                                    {{ __('Usuarios') }}
                                                 </a> --}}
                                             <a class="dropdown-item" href="{{ route('categories.index') }}">
-                                                {{ __('Categories') }}
+                                                {{ __('Categorias') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('units.index') }}">
-                                                {{ __('Units') }}
+                                                {{ __('Unidades') }}
                                             </a>
                                         </div>
                                     </div>
@@ -481,52 +478,50 @@
                 @yield('content')
             </div>
 
-            <footer class="footer footer-transparent d-print-none">
-                <div class="container-xl">
-                    <div class="row text-center align-items-center flex-row-reverse">
-                        <div class="col-lg-auto ms-lg-auto">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="https://tabler.io/docs" target="_blank"
-                                        class="link-secondary" rel="noopener">Documentation</a></li>
-                                <li class="list-inline-item"><a href="" class="link-secondary">License</a>
-                                </li>
-                                <li class="list-inline-item"><a href="https://github.com/tabler/tabler"
-                                        target="_blank" class="link-secondary" rel="noopener">Source code</a></li>
-                                <li class="list-inline-item">
-                                    <a href="https://github.com/sponsors/codecalm" target="_blank"
-                                        class="link-secondary" rel="noopener">
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon text-pink icon-filled icon-inline" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path
-                                                d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-                                        </svg>
-                                        Sponsor
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-auto mt-3 mt-lg-0">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item">
-                                    Copyright &copy; {{ now()->year }}
-                                    <a href="." class="link-secondary">Tabler</a>.
-                                    All rights reserved.
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="./changelog.html" class="link-secondary" rel="noopener">
-                                        v1.0.0-beta19
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+            <footer style="background-color: #f8f9fa; color: #343a40; padding: 20px 0;">
+                <div style="display: flex; justify-content: space-around; max-width: 1200px; margin: auto;">
+                    <div>
+                        <h4 style="color: #007bff;">Contacto</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>Email: proventmanager99@gmail.com</li>
+                            <li>Teléfono: +1 (555) 123-4567</li>
+                            <li>Dirección: SENA-CMD, Bogota, Colombia</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #007bff;">Términos y Políticas</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li><a href="{{ route('terms-of-service') }}" tabindex="-1" style="color: #007bff; text-decoration: none;">Politicas y Términos de Servicio</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #007bff;">Versión</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>Versión 1.0.0</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #007bff;">Ayuda</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            
+                            <li>
+                                <a href="/Manual-de-Usuario-PVM.pdf" download="Manual-de-Usuario-PVM.pdf" style="color: #007bff; text-decoration: none;">
+                                    Guía de Usuario
+                                </a>
+
+                            </li>
+                        
+
+                            <li><a href="https://darkslategray-pony-m7vk65abv1tl1ljy.builder-preview.com/#contact" style="color: #007bff; text-decoration: none;">Contacto de Soporte</a></li>
+                        </ul>
                     </div>
                 </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <p style="color: #868e96;">Copyright © 2024 ProVent Manager. Todos los derechos reservados.</p>
+                </div>
             </footer>
+
         </div>
     </div>
 

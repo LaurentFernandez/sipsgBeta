@@ -14,15 +14,15 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
     @if ($paginator->hasPages())
         <nav>
             <ul class="pagination">
-                {{-- Previous Page Link --}}
+                {{-- Enlace a la Página Anterior --}}
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true">
                         <span class="page-link">@lang('pagination.previous')</span>
                     </li>
                 @else
-                    @if(method_exists($paginator,'getCursorName'))
+                    @if(method_exists($paginator, 'getCursorName'))
                         <li class="page-item">
-                            <button dusk="previousPage" type="button" class="page-link" wire:key="cursor-{{ $paginator->getCursorName() }}-{{ $paginator->previousCursor()->encode() }}" wire:click="setPage('{{$paginator->previousCursor()->encode()}}','{{ $paginator->getCursorName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="prev">@lang('pagination.previous')</button>
+                            <button dusk="previousPage" type="button" class="page-link" wire:key="cursor-{{ $paginator->getCursorName() }}-{{ $paginator->previousCursor()->encode() }}" wire:click="setPage('{{$paginator->previousCursor()->encode()}}', '{{ $paginator->getCursorName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="prev">@lang('pagination.previous')</button>
                         </li>
                     @else
                         <li class="page-item">
@@ -31,11 +31,11 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                     @endif
                 @endif
 
-                {{-- Next Page Link --}}
+                {{-- Enlace a la Página Siguiente --}}
                 @if ($paginator->hasMorePages())
-                    @if(method_exists($paginator,'getCursorName'))
+                    @if(method_exists($paginator, 'getCursorName'))
                         <li class="page-item">
-                            <button dusk="nextPage" type="button" class="page-link" wire:key="cursor-{{ $paginator->getCursorName() }}-{{ $paginator->nextCursor()->encode() }}" wire:click="setPage('{{$paginator->nextCursor()->encode()}}','{{ $paginator->getCursorName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="next">@lang('pagination.next')</button>
+                            <button dusk="nextPage" type="button" class="page-link" wire:key="cursor-{{ $paginator->getCursorName() }}-{{ $paginator->nextCursor()->encode() }}" wire:click="setPage('{{$paginator->nextCursor()->encode()}}', '{{ $paginator->getCursorName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="next">@lang('pagination.next')</button>
                         </li>
                     @else
                         <li class="page-item">

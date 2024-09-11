@@ -14,33 +14,33 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
     @if ($paginator->hasPages())
         <nav>
             <ul class="pagination m-0 ms-auto">
-                {{-- Previous Page Link --}}
+                {{-- Enlace a la Página Anterior --}}
                 @if ($paginator->onFirstPage())
                 <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
                     <span class="page-link" aria-hidden="true">
                         <x-icon.chevron-left />
-                        prev
+                        anterior
                     </span>
                 </li>
                 @else
                     <li class="page-item">
                         <button type="button" dusk="previousPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}" class="page-link" wire:click="previousPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}" wire:loading.attr="disabled" rel="prev" aria-label="@lang('pagination.previous')">
                             <x-icon.chevron-left />
-                            prev
+                            anterior
                         </button>
                     </li>
                 @endif
 
-                {{-- Pagination Elements --}}
+                {{-- Elementos de Paginación --}}
                 @foreach ($elements as $element)
-                    {{-- "Three Dots" Separator --}}
+                    {{-- Separador de "Tres Puntos" --}}
                     @if (is_string($element))
                         <li class="page-item disabled" aria-disabled="true">
                             <span class="page-link">{{ $element }}</span>
                         </li>
                     @endif
 
-                    {{-- Array Of Links --}}
+                    {{-- Array de Enlaces --}}
                     @if (is_array($element))
                         @foreach ($element as $page => $url)
                             @if ($page == $paginator->currentPage())
@@ -52,7 +52,7 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                     @endif
                 @endforeach
 
-                {{-- Next Page Link --}}
+                {{-- Enlace a la Página Siguiente --}}
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
                         <button type="button"
@@ -60,13 +60,13 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
                                 class="page-link" wire:click="nextPage('{{ $paginator->getPageName() }}')" x-on:click="{{ $scrollIntoViewJsSnippet }}"
                                 wire:loading.attr="disabled"
                                 rel="next" aria-label="@lang('pagination.next')">
-                            next
+                            siguiente
                             <x-icon.chevron-right />
                         </button>
                     </li>
                 @else
                     <button type="button" class="page-link disabled">
-                        next
+                        siguiente
                         <x-icon.chevron-right />
                     </button>
                 @endif

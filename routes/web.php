@@ -30,6 +30,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+Route::post('/pdf-viewer', [App\Http\Controllers\PdfController::class, 'show'])->name('pdf-viewer');
+
+
 Route::get('/terms-of-service', function () {
     return view('auth.terms-of-service');
 })->name('terms-of-service');
